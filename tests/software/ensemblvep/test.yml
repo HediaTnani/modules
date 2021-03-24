@@ -1,0 +1,9 @@
+## TODO nf-core: Please run the following command to build this file:
+#                nf-core modules create-test-yml ensemblvep/None
+- name: ensemblvep
+  command: nextflow run ./tests/software/ensemblvep -entry test_ensemblvep -c tests/config/nextflow.config
+  tags:
+    - ensemblvep
+  files:
+    - path: output/ensemblvep/test.vcf
+      md5sum: e667c7caad0bc4b7ac383fd023c654fc
