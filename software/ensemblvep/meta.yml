@@ -1,0 +1,50 @@
+name: ensemblvep
+description: VEP determines the effect of your variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence, as well as regulatory regions
+keywords:
+  - variants
+  - effect
+tools:
+  - ensemblvep:
+      description: |
+VEP determines the effect of your variants (SNPs, insertions, deletions, CNVs or structural variants) on genes, transcripts, and protein sequence, as well as regulatory regions. 
+      homepage: https://fungi.ensembl.org/info/docs/tools/vep/index.html 
+      documentation: https://github.com/Ensembl/ensembl-vep
+      tool_dev_url: 
+      doi: "https://doi.org/10.1186/s13059-016-0974-4"
+      licence: 
+
+input:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+
+  - vcf:
+      type: file
+      description: vcf file
+      pattern: "*.{vcf}"
+
+## TODO nf-core: Add a description of all of the variables used as output
+output:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - vcf:
+      type: file
+      description: Sorted VCF file
+      pattern: "*.{vcf}"
+
+  - o:
+      type: file
+      description: cuatadapt log file
+      pattern: "*_vep_output.txt"
+  - version:
+      type: file
+      description: File containing software version
+      pattern: "*.{version.txt}"
+
+authors:
+  - "@HediaTnani"
